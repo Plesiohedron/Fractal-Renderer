@@ -5,7 +5,7 @@
 
 namespace Fractal {
     void Initialize();
-    void UpdateModel();
+    void UpdateModel(const int window_width, const int window_height);
     void Draw();
 
     extern std::unique_ptr<GL::Program> shader;

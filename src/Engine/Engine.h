@@ -15,6 +15,8 @@ public:
 public:
     Window* window;
 
+    const float sensitivity = 0.001f;
+
 private:
     Engine(const int window_width, const int window_height, const char* window_title);
     ~Engine() = default;
