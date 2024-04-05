@@ -9,7 +9,7 @@ public:
         return instance;
     }
 
-    void MainLoop();
+    void MainLoop() const;
 
 public:
     Window* window;

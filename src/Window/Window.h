@@ -12,9 +12,9 @@ public:
         return instance;
     }
 
-    bool IsShouldClose();
-    void SetShouldClose(bool flag);
-    void SwapBuffers();
+    bool IsShouldClose() const;
+    void SetShouldClose(bool flag) const;
+    void SwapBuffers() const;
 
 public:
     int width;

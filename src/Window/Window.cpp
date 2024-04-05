@@ -31,14 +31,14 @@ Window::~Window() {
     glfwTerminate();
 }
 
-bool Window::IsShouldClose() {
+bool Window::IsShouldClose() const {
     return glfwWindowShouldClose(window);
 }
 
-void Window::SetShouldClose(bool flag) {
+void Window::SetShouldClose(bool flag) const {
     glfwSetWindowShouldClose(window, flag);
 }
 
-void Window::SwapBuffers() {
+void Window::SwapBuffers() const {
     glfwSwapBuffers(window);
 }

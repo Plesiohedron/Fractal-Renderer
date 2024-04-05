@@ -4,7 +4,7 @@ Engine::Engine(const int window_width, const int window_height, const char* wind
     window = Window::Instance(window_width, window_height, window_title);
 }
 
-void Engine::MainLoop() {
+void Engine::MainLoop() const {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glEnable(GL_BLEND);
