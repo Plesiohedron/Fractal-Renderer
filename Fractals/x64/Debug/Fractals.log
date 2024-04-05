@@ -1,5 +1,5 @@
-﻿  VAO.cpp
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\GL\VAO.cpp(8,31): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\GL\VAO.cpp(27,36): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\GL\VAO.cpp(43,38): warning C4267: 'argument': conversion from 'size_t' to 'GLuint', possible loss of data
+﻿  Fractal.cpp
+glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Fractals.vcxproj -> C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\x64\Debug\Fractals.exe

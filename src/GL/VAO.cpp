@@ -40,7 +40,7 @@ void GL::VAO::InitializeVBO(const std::vector<glm::vec3>& vertices_data) {
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, vertices_data.size() * sizeof(glm::vec3), vertices_data.data(), GL_STATIC_DRAW);
-    glVertexAttribIPointer(VBOs_.size(), 1, GL_FLOAT, GL_FALSE, nullptr);
+    glVertexAttribPointer(VBOs_.size(), 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 
     VBOs_.push_back(VBO);
 }

@@ -2,32 +2,32 @@
 
 
 GL::Program::Program(const std::string& name) {
-    program = glCreateProgram();
+    program_ = glCreateProgram();
 
-    vertex_shader = LoadShader(("res/glsl/" + name + ".vert").c_str(), GL_VERTEX_SHADER);
-    fragment_shader = LoadShader(("res/glsl/" + name + ".frag").c_str(), GL_FRAGMENT_SHADER);
+    vertex_shader_ = LoadShader(("res/glsl/" + name + ".vert").c_str(), GL_VERTEX_SHADER);
+    fragment_shader_ = LoadShader(("res/glsl/" + name + ".frag").c_str(), GL_FRAGMENT_SHADER);
 }
 
 GL::Program::~Program() {
-    glDetachShader(program, vertex_shader);
-    glDetachShader(program, fragment_shader);
+    glDetachShader(program_, vertex_shader_);
+    glDetachShader(program_, fragment_shader_);
 
-    glDeleteShader(vertex_shader);
-    glDeleteShader(fragment_shader);
+    glDeleteShader(vertex_shader_);
+    glDeleteShader(fragment_shader_);
 
-    glDeleteProgram(program);
+    glDeleteProgram(program_);
 }
 
 void GL::Program::Link() const {
-    glAttachShader(program, vertex_shader);
-    glAttachShader(program, fragment_shader);
-    glLinkProgram(program);
+    glAttachShader(program_, vertex_shader_);
+    glAttachShader(program_, fragment_shader_);
+    glLinkProgram(program_);
 
     GLint status;
-    glGetProgramiv(program, GL_LINK_STATUS, &status);
+    glGetProgramiv(program_, GL_LINK_STATUS, &status);
     if (!status) {
         char buf[INFO_LOG_LENGTH];
-        glGetShaderInfoLog(program, INFO_LOG_LENGTH, nullptr, buf);
+        glGetShaderInfoLog(program_, INFO_LOG_LENGTH, nullptr, buf);
         std::cerr << buf << '\n';
 
         throw OpenGLError("Failed to link shader!");
@@ -35,7 +35,19 @@ void GL::Program::Link() const {
 }
 
 void GL::Program::Use() const {
-    glUseProgram(program);
+    glUseProgram(program_);
+}
+
+void GL::Program::BindAttribute(GLuint index, const char* name) {
+    glBindAttribLocation(program_, index, name);
+}
+
+GLint GL::Program::GetUniformLocation(const char* name) {
+    return glGetUniformLocation(program_, name);
+}
+
+void GL::Program::UniformMatrix(GLint location, glm::mat4 matrix) {
+    glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
 GLuint GL::Program::LoadShader(const char* path, const GLenum shaderType) const {

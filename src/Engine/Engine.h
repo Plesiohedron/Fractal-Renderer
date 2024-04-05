@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Events/Events.h"
+#include "../Fractal/Fractal.h"
 
 class Engine {
 public:
