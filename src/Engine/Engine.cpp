@@ -5,7 +5,7 @@ Engine::Engine(const int window_width, const int window_height, const char* wind
     Events::Initialize(window);
     Fractal::Initialize(window);
 
-    EngineFunction = std::bind(&Engine::Default, this, std::placeholders::_1, std::placeholders::_2);
+    EngineFunction = std::bind(&Engine::MousePos, this, std::placeholders::_1, std::placeholders::_2);
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);

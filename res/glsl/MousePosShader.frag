@@ -24,7 +24,7 @@ double square_modulus(dvec2 z) {
 
 void main() {
 	dvec2 Z = (gl_FragCoord.xy / window_size - CENTER_OFFSET) / scale;
-	dvec2 C = mouse_pos / window_size - CENTER_OFFSET;
+	dvec2 C = mouse_pos / window_size - dvec2(0.5, -0.5);
 	vec4 fractal_color = vec4(0, 0, 0, 1);
 
 	for (float i = 0; i < MAX_ITERATIONS; ++i) {

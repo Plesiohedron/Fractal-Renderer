@@ -33,7 +33,7 @@ namespace Fractal {
 };
 
 void Fractal::Initialize(const Window* window) {
-    shader = std::make_unique<GL::Program>("DefaultShader");
+    shader = std::make_unique<GL::Program>("MousePosShader");
     texture = std::make_unique<GL::Texture>();
     texture->SetImage(Image::LoadImage("inferno.PNG"));
     VAO = std::make_unique<GL::VAO>();
