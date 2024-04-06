@@ -14,7 +14,8 @@ public:
 
 public:
     Window* window;
-    const float sensitivity = 50.0f;
+    const float angle_sensitivity = 0.25f;
+    const float moving_sensitivity = 50.0f;
 
 private:
     Engine(const int window_width, const int window_height, const char* window_title);

@@ -19,12 +19,14 @@ namespace Fractal {
     extern GLint uniform_scale_loc;
     extern GLint uniform_window_size_loc;
     extern GLint uniform_offset_loc;
-    extern GLint uniform_C_loc;
+    extern GLint uniform_mouse_pos_loc;
+    extern GLint uniform_angle_loc;
     extern GLint uniform_texture_loc;
 
     extern glm::dvec2 scale;
     extern glm::dvec2 window_size;
     extern glm::dvec2 offset;
-    extern glm::dvec2 C;
+    extern glm::dvec2 mouse_pos;
+    extern float angle;
 };
 

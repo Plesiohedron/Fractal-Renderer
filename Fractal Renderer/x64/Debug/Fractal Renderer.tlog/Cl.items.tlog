@@ -1,10 +1,10 @@
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\Fractal\Fractal.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Fractal.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\Events\Events.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Events.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\Exceptions\Exceptions.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Exceptions.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\Engine\Engine.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Engine.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\GL\Program.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Program.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\GL\Texture.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Texture.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\GL\VAO.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\VAO.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\Image\Image.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Image.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\Main.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Main.obj
-C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\src\Window\Window.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractals\Fractal Renderer\x64\Debug\Window.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\Engine\Engine.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Engine.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\Events\Events.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Events.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\Exceptions\Exceptions.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Exceptions.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\Fractal\Fractal.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Fractal.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\GL\Program.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Program.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\GL\Texture.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Texture.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\GL\VAO.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\VAO.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\Image\Image.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Image.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\Main.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Main.obj
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\Window\Window.cpp;C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\Fractal Renderer\x64\Debug\Window.obj

@@ -14,16 +14,14 @@ Engine::Engine(const int window_width, const int window_height, const char* wind
 }
 
 void Engine::MainLoop() const {
-    unsigned int iteration = 0;
-    
-    double a = 0;
-    double b = 0;
-
     float last_time = static_cast<float>(glfwGetTime());
     float delta_time = 0.0f;
     float current_time = 0.0f;
 
     bool scene_is_changed = true;
+    bool animation = false;
+    bool mouse_pos = false;
+    bool main = true;
 
 
     while (!window->IsShouldClose()) {
@@ -44,39 +42,44 @@ void Engine::MainLoop() const {
                 scene_is_changed = true;
             }
 
-            if (Events::MouseIsPressed(GLFW_MOUSE_BUTTON_1)) {
-                Fractal::offset.x -= Events::cursor_delta_x * delta_time * sensitivity / Events::scale_factor;
-                Fractal::offset.y += Events::cursor_delta_y * delta_time * sensitivity / Events::scale_factor;
-                scene_is_changed = true;
+            if (mouse_pos) {
+                if (Events::MouseIsPressed(GLFW_MOUSE_BUTTON_1)) {
+                    Fractal::mouse_pos = {Events::cursor_x, -Events::cursor_y};
+                    scene_is_changed = true;
+                }
             }
 
-            if (Events::KeyIsPressed(GLFW_KEY_Q)) {
-                iteration -= 1000 * delta_time;
-
-                a = static_cast<double>(iteration) / 100000;
-                b = a / 100;
-
-                Fractal::C.x -= b * std::sin(a);
-                Fractal::C.y -= b* std::cos(a);
-                scene_is_changed = true;
+            if (animation) {
+                Fractal::angle += delta_time * angle_sensitivity;
             }
 
-            if (Events::KeyIsPressed(GLFW_KEY_E)) {
-                iteration += 1000 * delta_time;
+            if (main) {
+                if (Events::MouseIsPressed(GLFW_MOUSE_BUTTON_1)) {
 
-                a = static_cast<double>(iteration) / 100000;
-                b = a / 100;
+                    Fractal::offset.x -= Events::cursor_delta_x * delta_time * moving_sensitivity / Events::scale_factor;
+                    Fractal::offset.y += Events::cursor_delta_y * delta_time * moving_sensitivity / Events::scale_factor;
+                    scene_is_changed = true;
+                }
 
-                Fractal::C.x += b * std::sin(a);
-                Fractal::C.y += b * std::cos(a);
-                scene_is_changed = true;
+                if (Events::KeyIsPressed(GLFW_KEY_Q)) {
+                    Fractal::angle -= delta_time * angle_sensitivity;;
+                    scene_is_changed = true;
+                }
+
+                if (Events::KeyIsPressed(GLFW_KEY_E)) {
+                    Fractal::angle += delta_time * angle_sensitivity;;
+                    scene_is_changed = true;
+                }
             }
 
             if (scene_is_changed) {
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
                 Fractal::Draw();
                 window->SwapBuffers();
-                scene_is_changed = false;
+
+                if (!animation) {
+                    scene_is_changed = false;
+                }
             }
         }
 

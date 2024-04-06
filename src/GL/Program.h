@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include <GL/GL.h>
 #include <glm/glm.hpp>
@@ -22,6 +23,7 @@ namespace GL {
         void BindAttribute(GLuint index, const char* name) const;
         GLint GetUniformLocation(const char* name) const;
         void UniformVec2(GLint location, glm::dvec2 vector) const;
+        void UniformFloat(GLint location, float number) const;
         void UniformTexture(GLint location, GLint number) const;
 
     private:

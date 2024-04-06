@@ -50,6 +50,10 @@ void GL::Program::UniformVec2(GLint location, glm::dvec2 vector) const {
     glUniform2d(location, vector.x, vector.y);
 }
 
+void GL::Program::UniformFloat(GLint location, float number) const {
+    glUniform1f(location, number);
+}
+
 void GL::Program::UniformTexture(GLint location, GLint number) const {
     glUniform1i(location, number);
 }

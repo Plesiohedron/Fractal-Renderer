@@ -8,7 +8,7 @@ namespace Events {
     unsigned long long int current_frame = 0;
     unsigned long long int frames[1032]{0};
 
-    float scale_factor = 0.5f;
+    float scale_factor = 0.3f;
     float cursor_x = 0.0f;
     float cursor_y = 0.0f;
     float cursor_delta_x = 0.0f;
