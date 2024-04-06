@@ -16,3 +16,8 @@ class STBImageError: public std::runtime_error {
 public:
     inline explicit STBImageError(const std::string message): std::runtime_error(message) { };
 };
+
+class ParserError: public std::runtime_error {
+public:
+    inline explicit ParserError(const std::string message): std::runtime_error(message) { };
+};

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+
 #include "../Events/Events.h"
 #include "../Fractal/Fractal.h"
 
@@ -25,5 +27,11 @@ private:
     Engine(Engine&&) = delete;
     Engine& operator=(const Engine&) = delete;
     Engine& operator=(Engine&&) = delete;
+
+    void Animation(bool& scene_is_updated, float delta_time);
+    void MousePos(bool& scene_is_updated, float delta_time);
+    void Default(bool& scene_is_updated, float delta_time);
+
+    std::function<void(bool& scene_is_updated, float delta_time)> EngineFunction;
 };
 

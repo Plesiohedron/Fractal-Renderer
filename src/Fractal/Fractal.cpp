@@ -33,9 +33,9 @@ namespace Fractal {
 };
 
 void Fractal::Initialize(const Window* window) {
-    shader = std::make_unique<GL::Program>("MainShader");
+    shader = std::make_unique<GL::Program>("DefaultShader");
     texture = std::make_unique<GL::Texture>();
-    texture->SetImage(Image::LoadImage("inferno.png"));
+    texture->SetImage(Image::LoadImage("inferno.PNG"));
     VAO = std::make_unique<GL::VAO>();
 
     shader->BindAttribute(0, "position");

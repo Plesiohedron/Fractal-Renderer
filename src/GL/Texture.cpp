@@ -1,5 +1,4 @@
 #include "Texture.h"
-#include <iostream>
 
 GL::Texture::Texture() {
     glGenTextures(1, &handle_);
@@ -37,9 +36,4 @@ void GL::Texture::SetImage(const Image& image) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     glBindTexture(GL_TEXTURE_2D, 0);
-
-    GLenum error = glGetError();
-    if (error != GL_NO_ERROR) {
-        std::cerr << "OpenGL error after glBindTexture: " << error << std::endl;
-    }
 }

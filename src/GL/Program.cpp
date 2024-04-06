@@ -1,6 +1,5 @@
 #include "Program.h"
 
-
 GL::Program::Program(const std::string& name) {
     program_ = glCreateProgram();
 

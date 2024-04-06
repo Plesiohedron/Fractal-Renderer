@@ -1,2 +1,18 @@
 ﻿  Engine.cpp
+  Events.cpp
+  Exceptions.cpp
+  Fractal.cpp
+  Program.cpp
+  Texture.cpp
+  VAO.cpp
+  Image.cpp
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\GL\VAO.cpp(8,31): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\GL\VAO.cpp(27,36): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\src\GL\VAO.cpp(43,37): warning C4267: 'argument': conversion from 'size_t' to 'GLuint', possible loss of data
+  Main.cpp
+  Window.cpp
+  Generating Code...
+glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Fractal Renderer.vcxproj -> C:\Users\Ксеонщик\Desktop\Non-pet project\Fractal Renderer\x64\Debug\Fractal Renderer.exe
