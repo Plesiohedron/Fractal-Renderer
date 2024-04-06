@@ -19,9 +19,10 @@ namespace GL {
         void Link() const;
         void Use() const;
 
-        void BindAttribute(GLuint index, const char* name);
-        GLint GetUniformLocation(const char* name);
-        void UniformMatrix(GLint uniform, glm::mat4 matrix);
+        void BindAttribute(GLuint index, const char* name) const;
+        GLint GetUniformLocation(const char* name) const;
+        void UniformVec2(GLint location, glm::dvec2 vector) const;
+        void UniformTexture(GLint location, GLint number) const;
 
     private:
         GLuint LoadShader(const char* path, const GLenum shaderType) const;

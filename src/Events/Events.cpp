@@ -8,11 +8,13 @@ namespace Events {
     unsigned long long int current_frame = 0;
     unsigned long long int frames[1032]{0};
 
+    float scale_factor = 0.5f;
     float cursor_x = 0.0f;
     float cursor_y = 0.0f;
     float cursor_delta_x = 0.0f;
     float cursor_delta_y = 0.0f;
     bool cursor_is_moving = false;
+    bool wheel_is_scrolled = false;
 
     Window* window = nullptr;
 }
@@ -26,6 +28,7 @@ void Events::Initialize(Window* window) {
     glfwSetMouseButtonCallback(Events::window->window, MouseCallback);
     glfwSetCursorPosCallback(Events::window->window, CursorPosCallback);
     glfwSetWindowIconifyCallback(Events::window->window, WindowIconifyCallback);
+    glfwSetScrollCallback(Events::window->window, ScrollCallback);
 }
 
 void Events::PollEvents() {
@@ -97,4 +100,9 @@ void Events::CursorPosCallback(GLFWwindow* window, double xpos, double ypos) {
 
 void Events::WindowIconifyCallback(GLFWwindow* window, int iconified) {
     Events::window->is_iconfied = iconified;
+}
+
+void Events::ScrollCallback(GLFWwindow* window, double xoffset, double yoffset) {
+    scale_factor = std::max(0.01f, scale_factor * static_cast<float>(std::pow(1.1f, yoffset)));
+    wheel_is_scrolled = true;
 }

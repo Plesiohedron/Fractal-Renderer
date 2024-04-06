@@ -5,7 +5,7 @@
 int main() {
 
     try {
-        Engine& engine = Engine::Instance(1280, 720, "GLFW Works!");
+        Engine& engine = Engine::Instance(720, 480, "Fractal Renderer");
         engine.MainLoop();
     } catch (const GLFWError& e) {
         std::cerr << e.what() << std::endl;

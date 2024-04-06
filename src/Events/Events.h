@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 #include "../Window/Window.h"
 
 namespace Events {
@@ -14,6 +16,7 @@ namespace Events {
     void MouseCallback(GLFWwindow* window, int button, int action, int mods);
     void CursorPosCallback(GLFWwindow* window, double xpos, double ypos);
     void WindowIconifyCallback(GLFWwindow* window, int iconified);
+    void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset);
 
 
     extern const int MOUSE_BUTTONS_OFFSET;
@@ -22,11 +25,13 @@ namespace Events {
     extern unsigned long long int current_frame;
     extern unsigned long long int frames[1032];
 
+    extern float scale_factor;
     extern float cursor_x;
     extern float cursor_y;
     extern float cursor_delta_x;
     extern float cursor_delta_y;
     extern bool cursor_is_moving;
+    extern bool wheel_is_scrolled;
 
     extern Window* window;
 };
