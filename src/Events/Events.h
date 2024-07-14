@@ -8,6 +8,7 @@ namespace Events {
     void Initialize(Window* window);
     void PollEvents();
 
+    bool KeyIsClicked(int key);
     bool KeyIsPressed(int key);
     bool MouseIsPressed(int button);
 

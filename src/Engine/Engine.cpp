@@ -5,7 +5,13 @@ Engine::Engine(const int window_width, const int window_height, const char* wind
     Events::Initialize(window);
     Fractal::Initialize(window);
 
-    EngineFunction = std::bind(&Engine::MousePos, this, std::placeholders::_1, std::placeholders::_2);
+    if (Parser::shader == "Default") {
+        EngineFunction = std::bind(&Engine::Default, this, std::placeholders::_1, std::placeholders::_2);
+    } else if (Parser::shader == "Default") {
+        EngineFunction = std::bind(&Engine::Animation, this, std::placeholders::_1, std::placeholders::_2);
+    } else if (Parser::shader == "Default") {
+        EngineFunction = std::bind(&Engine::MousePos, this, std::placeholders::_1, std::placeholders::_2);
+    }
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
@@ -16,6 +22,18 @@ Engine::Engine(const int window_width, const int window_height, const char* wind
 }
 
 void Engine::Animation(bool& scene_is_updated, float delta_time) {
+    if (window->is_resized) {
+        Fractal::window_size = {window->width, window->height};
+        window->is_resized = false;
+        scene_is_updated = true;
+    }
+
+    if (Events::wheel_is_scrolled) {
+        Fractal::scale = {Events::scale_factor * window->height / window->width, Events::scale_factor};
+        Events::wheel_is_scrolled = false;
+        scene_is_updated = true;
+    }
+
     Fractal::angle += delta_time * angle_sensitivity;
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -24,8 +42,20 @@ void Engine::Animation(bool& scene_is_updated, float delta_time) {
 }
 
 void Engine::MousePos(bool& scene_is_updated, float delta_time) {
+    if (window->is_resized) {
+        Fractal::window_size = {window->width, window->height};
+        window->is_resized = false;
+        scene_is_updated = true;
+    }
+
+    if (Events::wheel_is_scrolled) {
+        Fractal::scale = {Events::scale_factor * window->height / window->width, Events::scale_factor};
+        Events::wheel_is_scrolled = false;
+        scene_is_updated = true;
+    }
+
     if (Events::MouseIsPressed(GLFW_MOUSE_BUTTON_1)) {
-        Fractal::mouse_pos = {Events::cursor_x, -Events::cursor_y};
+        Fractal::mouse_pos = {Events::cursor_x, Events::cursor_y};
         scene_is_updated = true;
     }
 
@@ -39,6 +69,18 @@ void Engine::MousePos(bool& scene_is_updated, float delta_time) {
 }
 
 void Engine::Default(bool& scene_is_updated, float delta_time) {
+    if (window->is_resized) {
+        Fractal::window_size = {window->width, window->height};
+        window->is_resized = false;
+        scene_is_updated = true;
+    }
+
+    if (Events::wheel_is_scrolled) {
+        Fractal::scale = {Events::scale_factor * window->height / window->width, Events::scale_factor};
+        Events::wheel_is_scrolled = false;
+        scene_is_updated = true;
+    }
+
     if (Events::MouseIsPressed(GLFW_MOUSE_BUTTON_1)) {
         Fractal::offset.x -= Events::cursor_delta_x * delta_time * moving_sensitivity / Events::scale_factor;
         Fractal::offset.y += Events::cursor_delta_y * delta_time * moving_sensitivity / Events::scale_factor;
@@ -46,12 +88,12 @@ void Engine::Default(bool& scene_is_updated, float delta_time) {
     }
 
     if (Events::KeyIsPressed(GLFW_KEY_Q)) {
-        Fractal::angle -= delta_time * angle_sensitivity;;
+        Fractal::angle -= delta_time * angle_sensitivity;
         scene_is_updated = true;
     }
 
     if (Events::KeyIsPressed(GLFW_KEY_E)) {
-        Fractal::angle += delta_time * angle_sensitivity;;
+        Fractal::angle += delta_time * angle_sensitivity;
         scene_is_updated = true;
     }
 
@@ -77,19 +119,11 @@ void Engine::MainLoop() const {
         delta_time = current_time - last_time;
         last_time = current_time;
 
+        if (Events::KeyIsClicked(GLFW_KEY_ESCAPE)) {
+            window->SetShouldClose(true);
+        }
+
         if (!window->is_iconfied) {
-            if (window->is_resized) {
-                Fractal::window_size = {window->width, window->height};
-                window->is_resized = false;
-                scene_is_updated = true;
-            }
-
-            if (Events::wheel_is_scrolled) {
-                Fractal::scale = {Events::scale_factor * window->height / window->width, Events::scale_factor};
-                Events::wheel_is_scrolled = false;
-                scene_is_updated = true;
-            }
-
             EngineFunction(scene_is_updated, delta_time);
         }
 

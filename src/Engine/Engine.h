@@ -4,6 +4,7 @@
 
 #include "../Events/Events.h"
 #include "../Fractal/Fractal.h"
+#include "../Parser/Parser.h"
 
 class Engine {
 public:

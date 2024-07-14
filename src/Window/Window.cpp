@@ -20,7 +20,7 @@ Window::Window(const int window_width, const int window_height, const char* wind
 
     glewExperimental = true;
     if (glewInit() != GLEW_OK) {
-        throw GLFWError("Failed to initialize GLEW.");
+        throw OpenGLError("Failed to initialize GLEW.");
     }
 
     glViewport(0, 0, width, height);

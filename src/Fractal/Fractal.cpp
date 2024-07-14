@@ -33,9 +33,9 @@ namespace Fractal {
 };
 
 void Fractal::Initialize(const Window* window) {
-    shader = std::make_unique<GL::Program>("MousePosShader");
+    shader = std::make_unique<GL::Program>(Parser::fractal + "/" + Parser::shader);
     texture = std::make_unique<GL::Texture>();
-    texture->SetImage(Image::LoadImage("inferno.PNG"));
+    texture->SetImage(Image::LoadImage(Parser::texture));
     VAO = std::make_unique<GL::VAO>();
 
     shader->BindAttribute(0, "position");

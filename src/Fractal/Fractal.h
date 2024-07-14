@@ -4,6 +4,7 @@
 #include "../GL/VAO.h"
 #include "../GL/Texture.h"
 #include "../Events/Events.h"
+#include "../Parser/Parser.h"
 
 namespace Fractal {
     void Initialize(const Window* window);

@@ -38,6 +38,14 @@ void Events::PollEvents() {
     glfwPollEvents();
 }
 
+bool Events::KeyIsClicked(int key) {
+    if (0 <= key && key < MOUSE_BUTTONS_OFFSET) {
+        return keys[key] && (frames[key] == current_frame);
+    }
+
+    return false;
+}
+
 bool Events::KeyIsPressed(int key) {
     if (0 <= key && key < MOUSE_BUTTONS_OFFSET) {
         return keys[key];

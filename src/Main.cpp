@@ -2,9 +2,14 @@
 
 #include "Engine/Engine.h"
 
-int main() {
+int main(const int argc, const char* argv[]) {
 
     try {
+        Parser::argc = argc;
+        Parser::argv = argv;
+
+        Parser::Parse();
+
         Engine& engine = Engine::Instance(720, 480, "Fractal Renderer");
         engine.MainLoop();
     } catch (const GLFWError& e) {

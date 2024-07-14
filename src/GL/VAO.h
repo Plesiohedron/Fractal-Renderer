@@ -21,8 +21,8 @@ namespace GL {
         VAO(const VAO&) = delete;
         ~VAO();
 
-        void Bind();
-        void Draw(unsigned int primitive_type);
+        void Bind() const;
+        void Draw(const unsigned int primitive_type) const;
 
         void InitializeVBO(const std::vector<glm::vec3>& vertices_data);
         void InitializeEBO(const std::vector<unsigned int>& indexes_data);

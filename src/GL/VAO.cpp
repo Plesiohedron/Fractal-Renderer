@@ -10,11 +10,11 @@ GL::VAO::~VAO() {
     glDeleteVertexArrays(1, &VAO_);
 }
 
-void GL::VAO::Bind() {
+void GL::VAO::Bind() const {
     glBindVertexArray(VAO_);
 }
 
-void GL::VAO::Draw(unsigned int primitive_type) {
+void GL::VAO::Draw(const unsigned int primitive_type) const {
     assert(EBO_ != 0);
 
     glBindVertexArray(VAO_);
