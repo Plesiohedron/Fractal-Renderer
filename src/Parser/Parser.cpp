@@ -31,8 +31,8 @@ void Parser::Parse() {
 
             if (value == "Julia") {
                 ;
-            } else if (value == "Mondelbrot") {
-                fractal = "Mondelbrot";
+            } else if (value == "Mandelbrot") {
+                fractal = "Mandelbrot";
             } else {
                 throw ParserError{"Wrong fractal input!"};
             }
@@ -75,7 +75,7 @@ void Parser::Parse() {
         }
     }
 
-    if (fractal != "Julia" && shader != "Default") {
+    if (fractal == "Mandelbrot" && shader != "Default") {
         throw ParserError{fractal + " fractal does not support " + shader + " shader!"};
     }
 
